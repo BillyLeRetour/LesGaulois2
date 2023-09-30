@@ -3,9 +3,11 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
+	
 	public Romain(String nom, int force) {
 		this.nom = nom;
-		this.force = force;
+		if (force>0) {this.force = force;}
+		else {this.force = 0;}
 	}
 	public String getNom() {
 		return nom;
@@ -26,12 +28,13 @@ public class Romain {
 	}
 	public static void main(String[] args) {
 		Romain minus;
-		minus=new Romain("Minus",5);
+		minus=new Romain("Minus",6);
 		
 		minus.prendreParole();
 		minus.parler("Bonjour");
 		minus.recevoirCoup(2);
-		
+		System.out.println(Equipement.Bouclier);
+		System.out.println(Equipement.Casque);
 		
 	}
 }
