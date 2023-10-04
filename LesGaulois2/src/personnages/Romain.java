@@ -19,6 +19,9 @@ public class Romain {
 	public String getNom() {
 		return nom;
 	}
+	public int getForce() {
+		return force;
+	}
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "'" + texte + "'");
 	}
@@ -48,7 +51,7 @@ public class Romain {
 			// equipementEjecte = ejecterEquipement();
 			// parler("J'abandonne...");
 			// }
-			if(force==0) {parler("A�e");
+			if(force==0) {parler("Aie");
 			}else {
 				equipementEjecte = ejecterEquipement();
 				parler("J'abandonne...");
@@ -102,27 +105,28 @@ public class Romain {
 	
 	
 	
-	private void sEquiper(Equipement equipement) {
+	public void sEquiper(Equipement equipement) {
+		final String soldat = "Le soldat "+this.getNom();
 		
 		switch(nbEquipement) {
 			case 0:
 				nbEquipement=1;
 				this.equipements[0]=equipement;
-				System.out.println("Le soldat "+this.getNom()+" s'equipe avec un "+equipement+".");
+				System.out.println(soldat+" s'equipe avec un "+equipement+".");
 				break;
 			case 1:
 				if (equipement == equipements[0]) {
-					System.out.println("Le soldat "+this.getNom()+" possede deja un "+equipement+" !");
+					System.out.println(soldat+" possede deja un "+equipement+" !");
 					break;
 				}
 				else {
 					nbEquipement=2;
 					this.equipements[1]=equipement;
-					System.out.println("Le soldat "+this.getNom()+" s'equipe avec un "+equipement+".");
+					System.out.println(soldat+" s'equipe avec un "+equipement+".");
 				}
 				break;
 			case 2:
-				System.out.println("Le soldat "+this.getNom()+" est deja bien protege !");
+				System.out.println(soldat+" est deja bien protege !");
 				break;
 			default:
 				System.out.println("error");

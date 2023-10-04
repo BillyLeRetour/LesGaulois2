@@ -4,17 +4,20 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int nbTrophees;
-	private Equipement[] trophees = new Equipement[100];
+	private Equipement[] trophees;
 
 	private int effetPotion = 1;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		trophees= new Equipement[100];
 	}
 	public String getNom() {
 		return nom;
 	}
+	
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + " ' " + texte + "'");
 	}
